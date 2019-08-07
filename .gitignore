@@ -1,0 +1,6 @@
+pom.xml.tag
+/target/*
+/target/**
+.idea/*
+/.idea/**
+openbanking-api-test-automation.iml
