@@ -1,0 +1,1 @@
+# openbanking_karate_test_sample
