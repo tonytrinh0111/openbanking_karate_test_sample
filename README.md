@@ -21,6 +21,8 @@ __Reference__
 
 
 ## Getting started
+
+### Hello World
 1. Install Java, Git, Maven (if have not done so)
 2. Create a new Git repo for each API  test suite and clone to your local machine
 3. Running below command to scaffold the test suite
@@ -40,7 +42,36 @@ __Reference__
 
 4. Once sample test suite is created, right click on the test suite and hit `Run`. Alternatively, you can run each `.feature` (normally for 1 test scenario)
 
-![Hello World!](images/karate-hello-world.jpg "Hello World!") 
+    ![Hello World!](images/karate-hello-world.jpg "Hello World!") 
 
+
+
+### Folder Structure
+
+![Folder Structure](images/folder-structure.jpg "Folder Structure") 
+
+All Git and IDE related folders / files (.idea, .git, *.iml) can be safely ignored. The focus is on `src/test/java` (referring to the annotation in above image)
+
+1. `*.feature` is where you define test script using Given When Then format
+2. Test scenario runner is a Java / Kotlin class which enable running `*.feature` via mvn command and by CI server. 
+    * The advantage as compare to Cucumber is that no step definition is needed.
+3. Test case runner is similar to test scenario runner but it's supposed to run all `*.feature` in sub-folders
+4. `karate-config.js` is where you define variables for environments, API key, Auth header etc. which then can be passed in to mvn command at run time. This externalize all environment config & credentials from checked in code and only be made available at run time.
+
+
+
+## CI or Command Line Testing
+
+Given `env` & `authPassword` are defined in `karate-config.js`, below command can be invoked manually or by CI server to execute the entire test suite
+
+```
+mvn clean test -Dkarate.env="dev" -DauthPassword=<enter Authcode here>"
+```
+
+
+Particular feature file can be invoke using below command, given Cucumber options are configured in test runner files
+```
+mvn clean test -Dcucumber.options="src/test/java/examples/users/users.feature" -Dkarate.env="qat" "-DauthPassword=<enter Authcode here>"
+```  
 
 
