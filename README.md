@@ -266,7 +266,7 @@ public class TestRunner_FR {
 
 ### Execute JavaScript in the Feature file
 
-```javascript
+```gherkin
 Feature: Generate a random session id
  
   Scenario: generate random session id
