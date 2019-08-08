@@ -63,7 +63,7 @@ All Git and IDE related folders / files (.idea, .git, *.iml) can be safely ignor
 
 ### Send a HTTP Request 
 
-```
+```cucumber
 Feature: Verify various combinations of Member API
 
   Background:
@@ -99,7 +99,7 @@ Feature: Verify various combinations of Member API
 * In the above example, the response is JSON format, so we can use karate’s builtin JsonPath notation to parse the response.
 
 ### Chaining multiple API calls
-```
+```gherkin
 Feature: request chaining with multiple api calls
  
 Scenario: chain request demo
