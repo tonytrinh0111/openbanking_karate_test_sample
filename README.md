@@ -63,7 +63,7 @@ All Git and IDE related folders / files (.idea, .git, *.iml) can be safely ignor
 
 ### Send a HTTP Request 
 
-```cucumber
+```gherkin
 Feature: Verify various combinations of Member API
 
   Background:
@@ -109,7 +109,7 @@ Scenario: chain request demo
  
     Given header X-Username = 'anonymous'
     Given header X-Password = 'anonymous'
-    Given url AM_HOST + '/some/endpoint
+    Given url AM_HOST + '/some/endpoint'
     And request ''
     When method POST
  
@@ -129,7 +129,7 @@ Scenario: chain request demo
  
     Given header X-Username = 'anonymous'
     Given header X-Password = 'anonymous'
-    Given url AM_HOST + '/openam/some-other-endpoint
+    Given url AM_HOST + '/openam/some-other-endpoint'
     And request mypayload1
     When method POST
 ```
@@ -138,7 +138,7 @@ Scenario: chain request demo
 ### Read request templates and call other feature files
 
 We can make our scenarios reusable and call them from other feature files. In this example, we can create a “generic” create-user.feature file where we can send the create user request but with a different request body
-```
+```gherkin
 Feature: Create User in IDM
  
   Scenario: Create user in IDM with given guid
@@ -153,7 +153,7 @@ Feature: Create User in IDM
 ```
 Note, in the above example, we are using `__arg` as the post body request. We can then call the above feature file and pass in the required post body, which in turn we can read from a template
 
-```
+```gherkin
 Feature: Create a user
  
   Scenario: Create user in IDM 
@@ -179,7 +179,7 @@ The template looks like
 
 We can read a specific variable in the called feature file which is passed from a calling feature file
 
-```
+```gherkin
 Feature: Create User in IDM
  
   Scenario: Create user in IDM with given guid
@@ -195,7 +195,7 @@ Feature: Create User in IDM
 
 Note, in the above example, we are using `__arg.emailAddress` as the post body request. We are only interested in sending the email address as the request. We can then call the above feature file and pass in the required post body, which in turn we can read from a template.
 
-```
+```gherkin
 Feature: Create a user
  
   Scenario: Create user in IDM 
@@ -287,7 +287,7 @@ The above code generates a random string of length 10 and saves it in a variable
 
 ### Call Java from a feature file
 
-```
+```java
 package com.example;
  
 public class StringUtil {
@@ -298,7 +298,7 @@ public class StringUtil {
 }
 ```
 
-```
+```gherkin
 Feature: Call java demo
  
 Scenario: Get number from text
@@ -314,7 +314,8 @@ The above feature file calls a Java method in the class called StringUtil. Then 
 
 ### Data Driven Tests
 Since Karate sits on top of cucumber, data-driven testing comes as default
-```
+
+```gherkin
 Feature: Data driven testing example
  
 Scenario Outline: An 'Invalid input request' error is returned if required parameters have incorrect values.
