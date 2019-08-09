@@ -18,18 +18,18 @@ import static org.junit.Assert.*;
 
 @CucumberOptions(
 //        features = "src/test/java/Features",
-        plugin = {"pretty", "html:target/cucumber-html-report"},
-        format = {"json:target/cucumber.json"},
-        dryRun=false,
-        monochrome=false,
-        tags = {"~@ignore","@primary, @secondary, @negative"}
+    plugin = {"pretty", "html:target/cucumber-html-report"},
+    format = {"json:target/cucumber.json"},
+    dryRun=false,
+    monochrome=false,
+    tags = {"~@ignore","@positive, @negative"}
 )
 public class FeaturesTest {
 
     @Test
     public void testParallel() {
         String karateOutputPath = "target/surefire-reports";
-        KarateStats stats = CucumberRunner.parallel(getClass(), 5, karateOutputPath);
+        KarateStats stats = CucumberRunner.parallel(getClass(), 1, karateOutputPath);
         generateReport(karateOutputPath);
         assertTrue("there are scenario failures", stats.getFailCount() == 0);
     }

@@ -6,7 +6,8 @@ function fn() {
   }
   var config = {
     env: env,
-	myVarName: 'someValue'
+	baseUrl: 'http://localhost:8080/cds-au/v1'
+
   }
   if (env == 'dev') {
     // customize
