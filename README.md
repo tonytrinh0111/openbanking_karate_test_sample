@@ -248,7 +248,7 @@ The example above utilizes Cucumber’s Scenario Outline and Examples keywords t
 
 ## CI / CD
 
-This repo is connected to CircleCI https://circleci.com/gh/contino/openbanking-api-test-automation
+This repo is connected to CircleCI https://circleci.com/gh/tonytrinh0111/openbanking_api_test_automation/
 
 ### Test report
 
