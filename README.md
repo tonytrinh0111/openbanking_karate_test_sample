@@ -41,6 +41,8 @@ Prerequisite: make, docker, docker-compose
 2. `karate-config.js` externalizes all environment config & credentials from checked in code. This is where you define variables for environments, API key, Auth header etc. which can be provided at run time.
 3. `FeaturesTest.java` is test runner. This needs no change
 
+### Test report
+`target/cucumber-html-reports` contain all summary & detailed reports.
 
 ## Common Usage
 
@@ -250,6 +252,3 @@ The example above utilizes Cucumber’s Scenario Outline and Examples keywords t
 
 This repo is connected to CircleCI https://circleci.com/gh/tonytrinh0111/openbanking_api_test_automation/
 
-### Test report
-
-`target/cucumber-html-reports` contain all summary & detailed reports.
