@@ -1,4 +1,4 @@
-function fn() {    
+function fn() {
   var env = karate.env; // get system property 'karate.env'
   karate.log('karate.env system property was:', env);
   if (!env) {
@@ -6,7 +6,7 @@ function fn() {
   }
   var config = {
     env: env,
-	baseUrl: 'http://localhost:8080/cds-au/v1'
+	baseUrl: 'http://ob-node-server-ecs-alb-1701626808.ap-southeast-2.elb.amazonaws.com/cds-au/v1'
 
   }
   if (env == 'dev') {

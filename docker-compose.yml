@@ -1,0 +1,8 @@
+version: '3.4'
+services:
+  mvn-jdk8:
+    image: maven:3.6.1-jdk-8
+    working_dir: /var/task/mvn-jdk8
+    volumes:
+      - .:/var/task/mvn-jdk8
+      - ~/.m2:/root/.m2
